@@ -1,0 +1,65 @@
+cd Desktop/buisness/projects/RentAlliance/src1/src
+
+from users.models import CustomUser, Survey
+
+oleg = CustomUser.objects.create_user('oleg@mail.ru', 'oleg') 
+
+vova = CustomUser.objects.get(pk=1)
+
+
+
+from users.models import CustomUser, Survey
+vova = CustomUser.objects.get(pk=1)
+oleg = CustomUser.objects.get(pk=2)
+grom = CustomUser.objects.get(pk=4)
+egor = CustomUser.objects.get(pk=5)
+
+a = Survey()
+a.renter_pk = 1
+a.landlord_pk = 4
+a.review = "Vova's review on grom"
+a.rate = 9999999999
+a.save()
+vova.surveys.add(a)
+vova.save()
+
+
+a = Survey()
+a.renter_pk = 2
+a.landlord_pk = 4
+a.review = "Oleg's review on grom"
+a.rate = 7777777777
+a.save()
+oleg.surveys.add(a)
+oleg.save()
+
+
+from users.models import CustomUser, Survey
+vova = CustomUser.objects.get(pk=1)
+oleg = CustomUser.objects.get(pk=2)
+grom = CustomUser.objects.get(pk=4)
+egor = CustomUser.objects.get(pk=5)
+survey = Survey()
+survey.review = "Oleg's review on Grom"
+survey.save()
+oleg.surveys.add(survey)
+egor.surveys.add(survey)
+grom.surveys.add(survey)
+oleg.save()
+egor.save()
+grom.save()
+
+from users.models import CustomUser, Survey
+vova = CustomUser.objects.get(pk=1)
+oleg = CustomUser.objects.get(pk=2)
+grom = CustomUser.objects.get(pk=4)
+egor = CustomUser.objects.get(pk=5)
+survey = Survey()
+survey.review = "Vova's review on Grom"
+survey.save()
+vova.surveys.add(survey)
+egor.surveys.add(survey)
+grom.surveys.add(survey)
+vova.save()
+egor.save()
+grom.save()
