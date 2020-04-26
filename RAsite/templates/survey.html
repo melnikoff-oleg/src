@@ -1,0 +1,226 @@
+{% extends "wrapper.html" %}
+{% block content %}
+
+<div class="vote">
+<div class="inner">
+<div class="title alCenter">
+<a href="http://alfa1978.hhos.ru/rent/personal.html#">ТЦ Великан Парк</a>
+<p>
+Расскажите о своём арендодателе (1 — очень плохо; 10 — очень хорошо):
+</p>
+</div>
+<div class="vote_block">
+<div class="list">
+<ul>
+  <li>
+    <p>
+      Оцените от 1 до 10 качество предоставленного вам в аренду помещения
+    </p>
+    <select class="select nice selectBox" name="select" style="display: none;">
+      <option value="1">-</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option selected value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+    </select>
+  </li>
+  <li>
+    <p>
+      Оцените от 1 до 10 комфортность и лёгкость выполнения условий заключённого
+      контракта по аренде
+    </p>
+    <select class="select nice selectBox" name="select" style="display: none;" id="2">
+      <option value="1">-</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option selected value="9">9</option>
+      <option value="10">10</option>
+    </select>
+  </li>
+  <li>
+    <p>
+      Оцените от 1 до 10 вероятность что вы работали бы с этим арендодателем, если
+      бы заранее знали что дела будут идти так как идут
+    </p>
+    <select class="select nice selectBox" name="select" style="display: none;" id="3">
+      <option value="1">-</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option selected value="9">9</option>
+      <option value="10">10</option>
+    </select>
+  </li>
+  <li>
+    <p>
+      Оцените от 1 до 10 соотношение цена/качество предоставленного вам в аренду
+      помещения
+    </p>
+    <select class="select nice selectBox" name="select" style="display: none;" id="4">
+      <option value="1">-</option>
+      <option selected value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+    </select>
+  </li>
+  <li>
+    <p>
+      Оцените от 1 до 10 степень вежливости и открытости вашего арендодателя
+    </p>
+    <select class="select nice selectBox" name="select" style="display: none;" id="5">
+      <option value="1">-</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option selected value="10">10</option>
+    </select>
+  </li>
+  <li>
+    <p>
+      Оцените от 1 до 10 насколько в целом Вы довольны нынешним положением дел
+    </p>
+    <select class="select nice selectBox" name="select" style="display: none;" id="6">
+      <option value="1">-</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option selected value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+    </select>
+  </li>
+  <li>
+    <p>
+      Оцените от 1 до 10 качество коммуникаций
+    </p>
+    <select class="select nice selectBox" name="select" style="display: none;" id="7">
+      <option value="1">-</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option selected value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+    </select>
+  </li>
+  <li>
+    <p>
+      Оцените от 1 до 10 вероятность того, что Вы порекомендуете другу арендовать
+      помещение в вашем ТЦ
+    </p>
+    <select class="select nice selectBox" name="select" style="display: none;" id="8">
+      <option value="1">-</option>
+      <option value="1">1</option>
+      <option selected value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+    </select>
+  </li>
+  <li>
+    <p>
+      Оцените от 1 до 10 насколько арендованная площадь оправдала ваши
+      ожидания
+    </p>
+    <select class="select nice selectBox" name="select" style="display: none;" id="9">
+      <option value="1">-</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option  selected value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+    </select>
+  </li>
+  <li>
+    <p>
+      Оцените от 1 до 10 охраняемость ТЦ
+    </p>
+    <select class="select nice selectBox" name="select" style="display: none;" id="10">
+      <option value="1">-</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option selected value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+    </select>
+  </li>
+</ul>
+<p class="text alCenter">
+  Общий рейтинг: <span>7,6</span>
+</p>
+</div>
+<!--end list-->
+<div class="comment">
+<p>
+  Общий отзыв (Напишите здесь всё, что посчитаете нужным о своём опыте аренды):
+</p>
+<form method="post" action="/chats/" id="form">
+  {% csrf_token %}
+  <textarea name="review" placeholder="Текст…"></textarea>
+  <input type="hidden"  value="lol" name="rate_fict"/>
+  <span>
+    Этот отзыв увидят все пользователи сайта
+  </span>
+  <button type="submit" name="button" onclick="f(document.getElementById('form'))">Сохранить</button>
+</form>
+</div>
+<!--end comment-->
+</div>
+<!--end vote_block-->
+</div>
+</div>
+<!--end vote-->
+{% endblock %}

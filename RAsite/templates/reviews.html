@@ -1,0 +1,72 @@
+{% extends "wrapper.html" %}
+{% block content %}
+      <!--end logo_block-->
+      <div class="comment_block">
+        <div class="link_block">
+          <div class="inner">
+            <div class="flex next rL">
+              <div class="left">
+                <a href="/chat_members/123">Назад</a>
+              </div>
+              <div class="alCenter right m0a">
+                <a href="http://alfa1978.hhos.ru/rent/page_2.html#">Отзывы</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--end link_block-->
+        <div class="rating">
+          <div class="inner">
+            <div class="title">
+              <h2>
+                {{landlord.name}}
+              </h2>
+              <p>
+                Рейтинг арендодателя: <span>8,5</span>
+              </p>
+            </div>
+            <div class="rating_block">
+
+
+              <div class="fleft">
+
+
+                {% for review in first_part %}
+                <div class="block_1">
+                  <h3>
+                    <span>Nike</span> (оценка: 8,5)
+                  </h3>
+                  <p>
+                    {{ review }}
+                  </p>
+                </div>
+                {% endfor %}
+    
+
+              </div>
+
+
+              <div class="fright">
+
+
+                {% for review in second_part %}
+                <div class="block_1">
+                  <h3>
+                    <span>Nike</span> (оценка: 8,5)
+                  </h3>
+                  <p>
+                    {{ review }}
+                  </p>
+                </div>
+                {% endfor %}
+
+
+              </div>
+              <div class="clear"></div>
+            </div>
+            <!--end rating_block-->
+          </div>
+        </div>
+        <!--end rating-->
+      </div>
+{% endblock %}

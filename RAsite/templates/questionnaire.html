@@ -1,0 +1,242 @@
+{% extends "wrapper.html" %}
+
+{% block content %}
+      <bold>{{key}}</bold>
+      <div class="vote">
+        <div class="inner">
+          <div class="title alCenter">
+            <a href="#">{{landlord_name}}</a>
+            <p>
+              Расскажите о своём арендодателе (1 — очень плохо; 10 — очень хорошо):
+            </p>
+          </div>
+          <form method="post" action="http://127.0.0.1:8000/chats/">{% csrf_token %} 
+            <input type="hidden" name= "landlord_pk" value = 1>
+            <input type="hidden" name="from" value="questionnaire">
+            <div class="vote_block">
+                <div class="list">
+                <ul>
+                    <li>
+                    <p>
+                        Оцените от 1 до 10 качество предоставленного вам в аренду помещения
+                    </p>
+                    <select class="select nice selectBox" name="placementValue">
+                        <option value="1">-</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                    </li>
+                    <li>
+                    <p>
+                        Оцените от 1 до 10 комфортность и лёгкость выполнения условий заключённого
+                        контракта по аренде
+                    </p>
+                    <select class="select nice selectBox" name="contractConditionsValue">
+                        <option value="1">-</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                    </li>
+                    <li>
+                    <p>
+                        Оцените от 1 до 10 вероятность что вы работали бы с этим арендодателем, если
+                        бы заранее знали что дела будут идти так как идут
+                    </p>
+                    <select class="select nice selectBox" name="futureParthershipValue">
+                        <option value="1">-</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                    </li>
+                    <li>
+                    <p>
+                        Оцените от 1 до 10 соотношение цена/качество предоставленного вам в аренду
+                        помещения
+                    </p>
+                    <select class="select nice selectBox" name="qualityValue">
+                        <option value="1">-</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                    </li>
+                    <li>
+                    <p>
+                        Оцените от 1 до 10 степень вежливости и открытости вашего арендодателя
+                    </p>
+                    <select class="select nice selectBox" name="politenessValue">
+                        <option value="1">-</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                    </li>
+                    <li>
+                    <p>
+                        Оцените от 1 до 10 насколько в целом Вы довольны нынешним положением дел
+                    </p>
+                    <select class="select nice selectBox" name="currentSituationValue">
+                        <option value="1">-</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                    </li>
+                    <li>
+                    <p>
+                        Оцените от 1 до 10 качество коммуникаций
+                    </p>
+                    <select class="select nice selectBox" name="communicationValue">
+                        <option value="1">-</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                    </li>
+                    <li>
+                    <p>
+                        Оцените от 1 до 10 вероятность того, что Вы порекомендуете другу арендовать
+                        помещение в вашем ТЦ
+                    </p>
+                    <select class="select nice selectBox" name="recommendationValue">
+                        <option value="1">-</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                    </li>
+                    <li>
+                    <p>
+                        Оцените от 1 до 10 насколько арендованная площадь оправдала ваши
+                        ожидания
+                    </p>
+                    <select class="select nice selectBox" name="expectationsValue">
+                        <option value="1">-</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                    </li>
+                    <li>
+                    <p>
+                        Оцените от 1 до 10 охраняемость ТЦ
+                    </p>
+                    <select class="select nice selectBox" name="safetyValue">
+                        <option value="1">-</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                    </li>
+                </ul>
+                <p class="text alCenter">
+                    Общий рейтинг: <span>7,6</span>
+                </p>
+                </div>
+                <!--end list-->
+                <div class="comment">
+                <p>
+                    Общий отзыв (Напишите здесь всё, что посчитаете нужным о своём опыте аренды):
+                </p>
+                    <textarea placeholder="Текст…" name="review"></textarea>
+                    <span>
+                    Этот отзыв увидят все пользователи сайта
+                    </span>
+                    <button type="submit" name="button">Сохранить</button>
+                </div>
+                <!--end comment-->
+            </div>
+          </form>
+          <!--end vote_block-->
+        </div>
+      </div>
+      <!--end vote-->
+  </div>
+  <!--end personal-->
+{% endblock %}
+
+<!-- user_id = models.IntegerField()
+landlord_id = models.IntegerField()
+placementValue = models.IntegerField()
+contractConditionsValue = models.IntegerField()
+futureParthershipValue = models.IntegerField()
+qualityValue = models.IntegerField()
+politenessValue = models.IntegerField()
+currentSituationValue = models.IntegerField()
+communicationValue = models.IntegerField()
+recommendationValue = models.IntegerField()
+expectationsValue = models.IntegerField()
+safetyValue = models.IntegerField() -->

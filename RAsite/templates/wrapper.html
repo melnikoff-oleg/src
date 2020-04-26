@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="minimum-scale=1.0, target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="MobileOptimized" content="320">
+  <meta name="format-detection" content="telephone=no">
+  <title>Title here</title>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'fonts/font.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/global.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/adaptive.css' %}">
+  <script src="{% static 'js/html5.js' %}"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script type="text/javascript">
+    function f(form){
+      var selects = document.getElementsByName("select");
+      var sum = 0;
+      var curdeg = 1;
+      for(var i = selects.length - 1; i >= 0; i--){
+        var e = selects[i];
+        sum += curdeg * (parseInt(e.options[e.selectedIndex].text) - 1);
+        curdeg *= 10;
+      }
+      form.rate_fict.value = sum;
+    }
+    function ff(button){
+      var form = button.parentNode;
+      var div1 = form.parentNode;
+      var div2 = div1.parentNode;
+      var selects = div2.getElementsByTagName("select");
+      var sum = 0;
+      var curdeg = 1;
+      for(var i = selects.length - 1; i >= 0; i--){
+        var e = selects[i];
+        console.log(parseInt(e.options[e.selectedIndex].text) - 1);
+        sum += curdeg * (parseInt(e.options[e.selectedIndex].text) - 1);
+        curdeg *= 10;
+      }
+      form.rate_fict.value = sum;
+    }
+    function g(form){
+      var review = document.getElementById("review");
+      form.review_fict.value = review.value;
+    }
+    function gg(button){
+      var form = button.parentNode;
+      var div = form.parentNode;
+      var review = div.getElementsByTagName('textarea')[0];
+      form.review_fict.value = review.value;
+    }
+    function deleteReview(button){
+      var div = button.parentNode;
+      var form = div.parentNode;
+      var review = form.getElementsByTagName('textarea')[0];
+      form.review_fict.value = review.value;
+      form.deleting.value = true
+    }
+    function saveReview(button){
+      var div = button.parentNode;
+      var form = div.parentNode;
+      var review = form.getElementsByTagName('textarea')[0];
+      form.review_fict.value = review.value;
+      form.deleting.value = false
+    }
+  </script>
+</head>
+
+<body>
+  <div id="wrapper">
+    <main id="main">
+      <div class="logo_block">
+        <div class="inner">
+          <div>
+            <div class="logo fleft">
+              {% if user.is_moderator %}
+                <a href="/chats_moderator" style="background-image: url(/static/img/header/logo.svg)"></a>
+              {% else %}
+                <a href="/chats" style="background-image: url(/static/img/header/logo.svg)"></a>
+              {% endif %}
+            </div>
+            <div class="fright name">
+              {% if user.is_moderator %}
+                <a href="/account_moderator">
+                  {{user.name}}
+                  <img src="{% static 'img/img_1.svg' %}" alt="">
+                </a>
+              {% else %}
+                <a href="/account">
+                  {{user.name}}
+                  <img src="{% static 'img/img_1.svg' %}" alt="">
+                </a>
+              {% endif %}
+            </div>
+            <div class="rL hid link">
+              {% if user.is_moderator %}
+                {% if account %}
+                  <a href="/chats_moderator">Чаты</a>
+                  <a class="active" href="/account_moderator">Личный кабинет</a>
+                {% else %}
+                  <a class="active" href="/chats_moderator">Чаты</a>
+                  <a href="/account_moderator">Личный кабинет</a>
+                {% endif %}
+              {% else %}
+                {% if account %}
+                  <a href="/chats">Чаты</a>
+                  <a class="active" href="/account">Личный кабинет</a>
+                {% else %}
+                  <a class="active" href="/chats">Чаты</a>
+                  <a href="/account">Личный кабинет</a>
+                {% endif %}
+              {% endif %}
+            </div>
+            <div class="clear"></div>
+          </div>
+        </div>
+      </div>
+      {% block content %}
+
+      {% endblock %}
+    </main>
+  </div>
+  <script src="{% static 'js/jquery.nice-select.js' %}"></script>
+  <script src="{% static 'js/jquery.arcticmodal.js' %}"></script>
+  <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

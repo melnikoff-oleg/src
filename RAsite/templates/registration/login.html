@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="minimum-scale=1.0, target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="MobileOptimized" content="320">
+  <meta name="format-detection" content="telephone=no">
+  <title>Title here</title>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'fonts/font.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/global.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/adaptive.css' %}">
+  <script src="{% static 'js/html5.js' %}"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+
+<body>
+  <div id="wrapper">
+    <main id="main">
+      <div class="entrance">
+        <div class="inner">
+          <div class="main_logo">
+            <a href="/" style="background-image: url(/static/img/header/logo.svg)"></a>
+            <!--  <a href="/">
+              <span>Rent</span>
+              <span>Alliance</span>
+              <i>Сообщество арендаторов России</i>
+            </a>-->
+          </div>
+          <!--end main_logo-->
+          <div class="entrance_form a_center flex betw">
+            <div class="text">
+              <p>
+                В связи с пандемией <i>COVID-19</i> всё больше арендодателей ставят
+                арендаторов в непосильные условия
+              </p>
+              <p>
+                Вскоре это приведёт к тотальному банкротству фирм и потере
+                торговых точек
+              </p>
+              <p>
+                <span>
+                  Не позволяйте им лишить Вас всего! <em class="ttu">Объединяйтесь!</em>
+                </span>
+              </p>
+            </div>
+            <!--end text-->
+            <div class="form">
+              <h3>
+                Вход
+              </h3>
+              <form method="post" action="{% url 'login' %}">
+                {% csrf_token %}
+                <input type="hidden" name="from" value="login">
+                <div>
+                  <input class="inputbox box ell rL w100 db" type="username" name="username" placeholder="Логин" required>
+                </div>
+                <div>
+                  <input class="inputbox box ell rL w100 db" type="password" name="password" placeholder="Пароль" required>
+                </div>
+                <div>
+                  <button type="submit" name="login">Войти</button>
+                </div>
+                <p>
+                  Сайт доступен только для арендаторов<i class="db"></i>
+                  и арендодателей.<i class="db"></i>
+                  Если у вас нет логина и пароля,<i class="db"></i>
+                  напишите нам на почту
+                  <a href="mailto:rentalliance@gmail.com">rentalliance@gmail.com</a>
+                </p>
+                <div class="alCenter">
+                  <a id="btn_1" href="#">Забыли пароль?</a>
+                </div>
+              </form>
+            </div>
+            <!--end form-->
+          </div>
+          <!--end entrance_form-->
+        </div>
+      </div>
+      <!--end entrance-->
+    </main>
+    <!--end main-->
+  </div>
+  <!--end wrapper-->
+
+  <!-- modal-->
+  <div class="g-hidden">
+    <div class="b-modal" id="modal_1">
+      <div class="popup">
+        <div class="b-modal_close arcticmodal-close"></div>
+        <h3>
+          Укажите почту и мы вышлем<i class="db"></i>
+          вам новый пароль
+        </h3>
+        <form method="post">
+          <div>
+            <input class="inputbox box ell rL w100 db" type="email" name="email" placeholder="Email" required>
+          </div>
+          <div>
+            <button type="submit" name="button">Получить пароль</button>
+          </div>
+        </form>
+      </div>
+      <!--end popup-->
+    </div>
+  </div>
+
+  <script src="{% static 'js/jquery.nice-select.js' %}"></script>
+  <script src="{% static 'js/jquery.arcticmodal.js' %}"></script>
+  <script src="{% static 'js/script.js' %}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+{% extends "wrapper.html" %}
+{% block content %}
+      <div class="back_block">
+        <div class="link_block link_block--2">
+          <div class="inner">
+            <div class="flex a_center betw">
+              <div class="left">
+                <a href="http://alfa1978.hhos.ru/rent/page_5.html#">Назад</a>
+              </div>
+              <div class="alCenter right">
+                <a href="http://alfa1978.hhos.ru/rent/page_5.html#">Информация</a>
+              </div>
+              <div class="key"></div>
+            </div>
+          </div>
+        </div>
+        <!--end link_block-->
+        <div class="info_mod">
+          <div class="inner">
+            <div class="mod_block">
+              <div class="block_1 rL">
+                <a href="http://alfa1978.hhos.ru/rent/page_5.html#">{{ moderator.name }} {{ moderator.email }}</a>
+                <span class="yes">Модератор</span>
+              </div>
+              <!--end block_1-->
+              <div class="block_1 rL item">
+                <a href="http://alfa1978.hhos.ru/rent/page_5.html#">{{ landlord.name }} (арендодатель)</a>
+                <span class="yes">В чате</span>
+              </div>
+              {% for renter in renters %}
+              <div class="block_1 rL">
+                <a href="http://alfa1978.hhos.ru/rent/page_5.html#">{{ renter.name }}</a>
+                <span class="yes">В чате</span>
+              </div>
+              {% endfor %}
+              
+              <!--end block_1-->
+            </div>
+            <!--end mod_block-->
+          </div>
+        </div>
+        <!--end info_mod-->
+      </div>
+      <!--end info_block-->
+{% endblock %}

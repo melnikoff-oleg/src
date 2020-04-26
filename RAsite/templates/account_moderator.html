@@ -1,0 +1,113 @@
+{% extends "wrapper.html" %}
+
+{% block content %}
+      <div class="review">
+        <div class="inner">
+          <div class="review_form">
+            <div class="block_1 fleft">
+              <div class="flex a_center betw">
+                <div class="name a_center flex">
+                  <div class="name_letter">
+                    <span>м</span>
+                  </div>
+                  <div class="name_block">
+                    <h3>Модератор</h3>
+                    <p>Санкт-Петербург</p>
+                  </div>
+                </div>
+                <div class="link">
+                  <a>Изменить</a>
+                </div>
+              </div>
+              <form method="post">
+                {% csrf_token %}
+                <div class="rL">
+                  <input class="reg" type="email" name="email" placeholder="nikita.gromtsev@rentalliance.ru" value="{{user.email}}">
+                  <span>Email</span>
+                </div>
+                <div class="rL">
+                  <input class="reg" type="password" name="password" placeholder="fj95OPdk7" value="{{user.password}}">
+                  <span>Пароль</span>
+                </div>
+                <a class="fright out rL" href="{% url 'logout'%}">Выйти</a>
+                <button class="save hide" type="submit">Сохранить</button>
+                <div class="clear"></div>
+              </form>
+            </div>
+            <!--end block_1-->
+            <div class="block_2 fright">
+              <p>
+                Сообщить о проблеме
+              </p>
+              <form method="post">
+                <textarea name="name" placeholder="Опишите проблему"></textarea>
+                <button type="submit" name="button">Отправить</button>
+              </form>
+            </div>
+            <!--end block_2-->
+            <div class="clear"></div>
+          </div>
+          <!--end review_form-->
+          <div class="review_block review_block_2">
+
+            <div class="fleft left">
+              {% for survey in first_part %}
+              <div class="block_1 block_11">
+                <div class="flex a_center betw">
+                  <h3>Отзыв о <span>ТЦ Великан Парк</span></h3>
+                  <a class="link fright">Редактировать</a>
+                </div>
+                <div class="clear"></div>
+                <div>
+                  <form class="rL" method="post">
+                    {% csrf_token %}
+                    <div></div>
+                    <textarea class="bg" name="name">{{ survey.review }}</textarea>
+                    <div class="m0a hide betw decision">
+                      <input type="hidden"  value="{{ survey.pk }}" name="pk"/>
+                      <input type="hidden"  value="tut budet review" name="review_fict"/>
+                      <input type="hidden"  value="true" name="deleting"/>
+                      <button class="leave rL" type="submit" onclick="saveReview(this)">Оставить</button>
+                      <button class="del rL" type="submit" onclick="deleteReview(this)">Удалить</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+
+
+            <div class="fright right">
+              {% for survey in second_part %}
+              <div class="block_1 block_11">
+                <div class="flex a_center betw">
+                  <h3>Отзыв о <span>ТЦ Великан Парк</span></h3>
+                  <a class="link fright">Редактировать</a>
+                </div>
+                <div class="clear"></div>
+                <div>
+                  <form class="rL" method="post">
+                    {% csrf_token %}
+                    <div></div>
+                    <textarea class="bg" name="name">{{ survey.review }}</textarea>
+                    <div class="m0a hide betw decision">
+                      <input type="hidden"  value="{{ survey.pk }}" name="pk"/>
+                      <input type="hidden"  value="tut budet review" name="review_fict"/>
+                      <input type="hidden"  value="lol" name="deleting"/>
+                      <button class="leave rL"  type="submit" onclick="saveReview(this)">Оставить</button>
+                      <button class="del rL" type="submit" onclick="deleteReview(this)">Удалить</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+
+
+            <div class="clear"></div>
+          </div>
+          <!--end review_block-->
+        </div>
+      </div>
+      <!--end review-->
+{% endblock %}

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="136" viewBox="0 0 440 136">
+  <g id="Group_5" data-name="Group 5" transform="translate(-88 -32)">
+    <rect id="Rectangle_4" data-name="Rectangle 4" width="440" height="136" rx="24" transform="translate(88 32)" fill="#ebebeb"/>
+    <g id="Group_1" data-name="Group 1" transform="translate(119 50)">
+      <text id="Rent" transform="translate(0 60)" fill="#0f0f10" font-size="65" font-family="SegoeUI-Bold, Segoe UI" font-weight="700"><tspan x="0" y="0">Rent</tspan></text>
+      <text id="Alliance" transform="translate(139 60)" fill="#f02e31" font-size="65" font-family="SegoeUI-Bold, Segoe UI" font-weight="700"><tspan x="0" y="0">Alliance</tspan></text>
+    </g>
+    <text id="Сообщество_арендаторов_России" data-name="Сообщество арендаторов России" transform="translate(119 135)" fill="#0f0f10" font-size="24.09" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Сообщество арендаторов России</tspan></text>
+  </g>
+</svg>
