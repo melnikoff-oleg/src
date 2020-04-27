@@ -1,7 +1,7 @@
 aioredis==1.2.0
 asgiref==2.3.2
 astroid==2.0.4
-async-timeout==3.0.1
+async-timeout
 attrs==18.2.0
 autobahn==18.10.1
 Automat==0.7.0
@@ -40,7 +40,7 @@ sqlparse==0.3.0
 Twisted==18.9.0
 txaio==18.8.1
 typed-ast==1.1.0
-urllib3==1.25.2
+urllib3
 whitenoise==3.3.1
 wrapt==1.10.11
 zope.interface==4.6.0
