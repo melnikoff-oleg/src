@@ -13,7 +13,7 @@ SECRET_KEY = 'ric$p^-(f1gc&h#$!0v0urx%%@s*7wscq39$$skd5hyn$q1d#t'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['31.31.201.142', 'rent-alliance.com', 'www.rent-alliance.com']
 
 
 # Application definition
@@ -127,8 +127,8 @@ TIME_ZONE = 'Europe/Moscow'
 #LOGIN_URL = 'http://127.0.0.1:8000/'
 
 # Redirect to home URL after login (Default redirects to /accounts/profile/)
-LOGIN_REDIRECT_URL = 'http://127.0.0.1:8000/chats/'
-LOGOUT_REDIRECT_URL = 'http://127.0.0.1:8000/accounts/login'
+LOGIN_REDIRECT_URL = '/chats/'
+LOGOUT_REDIRECT_URL = '/accounts/login'
 
 #for testing through console
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
